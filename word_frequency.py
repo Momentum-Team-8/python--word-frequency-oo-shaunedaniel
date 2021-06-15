@@ -1,3 +1,6 @@
+import string
+
+
 STOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has',
     'he', 'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to',
@@ -7,14 +10,17 @@ STOP_WORDS = [
 
 class FileReader:
     def __init__(self, filename):
-        pass
+        self.doc = filename
 
     def read_contents(self):
         """
         This should read all the contents of the file
         and return them as one string.
         """
-        raise NotImplementedError("FileReader.read_contents")
+        self.doc = open(self.doc, "r")
+        return self.doc.readlines()
+        breakpoint
+        # raise NotImplementedError("FileReader.read_contents"
 
 
 class WordList:
